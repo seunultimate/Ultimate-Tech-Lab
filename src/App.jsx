@@ -1,0 +1,48 @@
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import ChatBot from './components/ChatBot'
+import Home from './pages/Home'
+import About from './pages/About'
+import Services from './pages/Services'
+import Portfolio from './pages/Portfolio'
+import Shop from './pages/Shop'
+import Blog from './pages/Blog'
+import Contact from './pages/Contact'
+import WhoWeAre from './pages/about/WhoWeAre'
+import Values from './pages/about/Values'
+import Vision from './pages/about/Vision'
+import FAQs from './pages/about/FAQs'
+import WebDevelopment from './pages/services/WebDevelopment'
+import CryptoServices from './pages/services/CryptoServices'
+import ShoppingAssistance from './pages/services/ShoppingAssistance'
+import BecomeSeller from './pages/BecomeSeller'
+
+function App() {
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/about/who-we-are" element={<WhoWeAre />} />
+        <Route path="/about/values" element={<Values />} />
+        <Route path="/about/vision" element={<Vision />} />
+        <Route path="/about/faqs" element={<FAQs />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/crypto" element={<CryptoServices />} />
+        <Route path="/services/shopping" element={<ShoppingAssistance />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/become-seller" element={<BecomeSeller />} />
+      </Routes>
+      <Footer />
+      <ChatBot/>
+    </div>
+  )
+}
+
+export default App;
