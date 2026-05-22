@@ -148,14 +148,21 @@ function Navbar() {
 </div>
 
           {/* Get Started Button */}
-          <div className="hidden md:flex">
-            <Link
-              to="/contact"
-              className="px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all"
-            >
-              Get Started
-            </Link>
-          </div>
+          {/* Auth buttons */}
+<div className="hidden md:flex items-center gap-3">
+  <Link
+    to="/login"
+    className="px-4 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors"
+  >
+    Sign In
+  </Link>
+  <Link
+    to="/signup"
+    className="px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all"
+  >
+    Get Started
+  </Link>
+</div>
 
           {/* Mobile Menu Button */}
           <button

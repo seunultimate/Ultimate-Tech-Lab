@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ChatBot from './components/ChatBot'
@@ -17,11 +17,22 @@ import WebDevelopment from './pages/services/WebDevelopment'
 import CryptoServices from './pages/services/CryptoServices'
 import ShoppingAssistance from './pages/services/ShoppingAssistance'
 import BecomeSeller from './pages/BecomeSeller'
+import SignUp from './pages/auth/SignUp'
+import Login from './pages/auth/Login'
+import Dashboard from './pages/auth/Dashboard'
 
 function App() {
+  const location = useLocation()
+
+  // ✅ Pages that should NOT show Navbar and Footer
+  const authPages = ['/signup', '/login', '/dashboard']
+  const isAuthPage = authPages.some(page =>
+    location.pathname.startsWith(page)
+  )
+
   return (
     <div>
-      <Navbar />
+      {!isAuthPage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -38,11 +49,14 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/become-seller" element={<BecomeSeller />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-      <Footer />
-      <ChatBot/>
+      {!isAuthPage && <Footer />}
+      {!isAuthPage && <ChatBot />}
     </div>
   )
 }
 
-export default App;
+export default App
