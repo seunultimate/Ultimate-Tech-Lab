@@ -83,7 +83,7 @@ function HeroSection() {
   const whatsappNumber = "2348038786037"
 
   return (
-    <section className="relative min-h-screen bg-[#0a0f2c] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-auto bg-[#0a0f2c] flex items-center overflow-hidden pt-16">
 
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -100,8 +100,7 @@ function HeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
-
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 grid lg:grid-cols-2 gap-8 items-center">
         {/* Left Side */}
         <div className="space-y-8">
 
