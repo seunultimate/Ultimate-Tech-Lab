@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Shop() {
 
@@ -215,12 +215,24 @@ Please assist me with this order. Thank you!`
             <button className="px-6 py-3.5 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-xl transition-all hover:-translate-y-0.5">
               Search
             </button>
-            <Link
-              to="/become-seller"
-              className="px-6 py-3.5 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl transition-all hover:-translate-y-0.5"
-            >
-             🏪 Become a Seller
-            </Link>
+            <button
+  onClick={() => {
+    const user = localStorage.getItem('utl_current_user')
+    if (!user) {
+      window.location.href = '/signup?role=seller'
+    } else {
+      const parsed = JSON.parse(user)
+      if (parsed.accountType === 'seller') {
+        window.location.href = '/dashboard'
+      } else {
+        window.location.href = '/signup?role=seller'
+      }
+    }
+  }}
+  className="px-6 py-3.5 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl transition-all hover:-translate-y-0.5"
+>
+  🏪 Become a Seller
+</button>
           </div>
         </div>
       </section>

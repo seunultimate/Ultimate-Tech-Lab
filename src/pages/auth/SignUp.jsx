@@ -21,8 +21,30 @@ function SignUp() {
 
   // ✅ Account types users can register as
   const accountTypes = [
-    { id: 'client', label: 'Client', desc: 'I want to hire services', icon: '👤' },
-    { id: 'seller', label: 'Seller', desc: 'I want to sell products', icon: '🏪' },
+    {
+      id: 'client',
+      label: 'Client',
+      desc: 'I want to hire services',
+      icon: '👤',
+    },
+    {
+      id: 'seller',
+      label: 'Seller',
+      desc: 'I want to sell products',
+      icon: '🏪',
+    },
+    {
+      id: 'learner',
+      label: 'AI Learner',
+      desc: 'I want to learn AI & Tech',
+      icon: '🤖',
+    },
+    {
+      id: 'crypto',
+      label: 'Crypto Student',
+      desc: 'I want to learn crypto trading',
+      icon: '💰',
+    },
   ]
 
   const handleChange = (e) => {

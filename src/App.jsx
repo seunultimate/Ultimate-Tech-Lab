@@ -20,6 +20,7 @@ import BecomeSeller from './pages/BecomeSeller'
 import SignUp from './pages/auth/SignUp'
 import Login from './pages/auth/Login'
 import Dashboard from './pages/auth/Dashboard'
+import AILearning from './pages/AILearning'
 
 function App() {
   const location = useLocation()
@@ -52,6 +53,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/ai-learning" element={<AILearning />} />
       </Routes>
       {!isAuthPage && <Footer />}
       {!isAuthPage && <ChatBot />}
